@@ -1,0 +1,9 @@
+{# article.html #}
+{% extends 'base.html' %}
+
+{% block content %}
+    <p><a href="{% url 'article-list' %}"> < BACK </a></p>
+    <h1>{{ article.headline }}</h1>
+    <p>{{ article.content }}</p>
+    <p>by {{ article.author }} on {{ article.time|date }}</p>
+{% endblock %}

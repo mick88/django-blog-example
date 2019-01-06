@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'blog/header.html' %}
+    <ul>
+    {% for article in article_list %}
+        <li>
+            <a href="{% url 'article' pk=article.pk %}" title="{{ article.time }}">{{ article.headline }}</a>
+            by {{ article.author }}.
+        </li>
+    {% endfor %}
+    </ul>
+    {% if request.user.is_authenticated %}
+        <div><a href="{% url 'article-form' %}">Write article</a></div>
+    {% endif %}
+{% endblock %}
