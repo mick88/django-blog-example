@@ -1,0 +1,4 @@
+/.idea/
+*.pyv
+*.sqlite3
+/venv/
